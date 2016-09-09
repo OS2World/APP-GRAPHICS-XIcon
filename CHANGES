@@ -1,0 +1,12 @@
+CHANGES for XIcon 
+
+v1.0: (04 Jan 94)
+
+  - Added ability to read OS/2 icons
+  - Added ability to write XPM files
+
+    The -a option appends a number to the end of the suggested output.
+    It's sort of crude.  If you supply an output filename of TEST, 
+    xicon will write TEST1.xpm, TEST2.xpm, ...
+
+    

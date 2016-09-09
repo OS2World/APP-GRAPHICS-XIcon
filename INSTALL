@@ -1,0 +1,34 @@
+Install instructions for XIcon:
+
+  - Compile XIcon with gcc.  Oh, it might work with some other compiler,
+    but I haven't tried...
+
+  - For OS/2, I use Eberhard Mattes port of gcc.  You might need to change
+    the #ifdef lines that reference __EMX__ if you are using a different
+    gcc.
+
+  - In ./src, modify the Makefile to suit your system.  Run make to build 
+    XIcon.  For more information look in the Makefile.
+
+  - If you want to output XPM3 files, you must have 'rgb.txt' in 
+    /usr/local/lib/X11.  If you don't have a copy of rgb.txt (it is standard
+    in the X11 distribution), you can use the one in ./lib, however, you
+    will have to remember to use -R to point to it...
+
+  - Caveat: I've been lazy and some of the filenames don't fit in 8.3.  But
+    they're all unique in 8.3...
+
+  - DOS and OS/2 users who do not already have the EMX runtime installed 
+    should unpack and install ./emxrt.zip.  If you already have the EMX
+    runtime installed, this step is unnecessary.  Always make sure you 
+    are using the most recent EMX runtime, if possible.  This distribution
+    includes EMX 0.8h.
+
+If you have any questions or problems, feel free to send me email.  I will
+help if I can.
+
+                                                            norm
+							    <norm@ora.com>
+
+(If you add more options, please send them to me to incorporate into the
+"standard" distribution).

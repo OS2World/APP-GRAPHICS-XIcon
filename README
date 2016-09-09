@@ -1,0 +1,97 @@
+README for XIcon version 1.0                                    04 Jan 1993
+
+XIcon is a conversion program for translating icons between various
+formats.  It was written by Norman Walsh <norm@ora.com> using EMX/GCC.  
+
+XIcon reads:
+
+  Mac icon resources (raw resource forks)
+  Windows icon files
+  X11 XBM files
+  OS/2 v1.2 Icon files
+  OS/2 v2.0 Icon files
+
+XIcon writes:
+
+  OS/2 v1.2 Icon files
+  OS/2 v2.0 Icon files
+  Windows Icon files (well, sortof--it's mostly untested)
+  X11 XPM files
+
+My appologies for the poor documentation and hideous command line options
+of this program.  For a brief summary of the available options, run XIcon
+without any parameters.  Here is a brief summary:
+
+  xicon <options> input output
+
+Will convert the icons in "input" into OS/2 1.2 icons in "output".
+
+  GENERAL OPTIONS
+    -2  Write an OS/2 2.0 icon file instead
+    -w  Write a Windows icon file instead (largely untested)
+    -x  Write an XPM3 icon file instead
+  
+  OPTIONS FOR MAC RESOURCES
+    -p  Use Mac palette rather than OS/2 palette.
+    -I  Don't include ICN# resources (32x32x1 images)
+    -#  Don't include ics# resources (16x16x1 images)
+    -l  Don't include icl4 resources (32x32x4 images)
+    -s  Don't include ics4 resources (16x16x4 images)
+  
+  OPTIONS FOR XPM FILES
+    -a  Write all the icons.  Since XPM files can only contain a single icon,
+        xicon normally translates only the first icon found.  If -a is 
+        specified, the output filename is used as a pattern and "#.xpm" is
+        appended to it.  If the output file is "test", xicon will create
+        "test1.xpm", "test2.xpm", etc...
+  
+    -R  Specifies an alternate colors database file.  XPM files contain color
+        names.  In order to determine what names to use, xicon reads the
+        "rgb.txt" file in /usr/local/lib/X11.  If your rgb.txt file is 
+	somewhere else...  Note: if you don't use X11, you probably don't have 
+	an rgb.txt file, so one is supplied in this distribution.  Of course, 
+	if you don't have X11, you probably don't have much use for XPM files 
+	either...
+       
+  OPTIONS FOR XBM FILES 
+    -f  Set foreground color to 'C'.  
+    -b  Set background color to 'C'
+  
+        C=0..15 or 't' for transparent, or 'r' for reverse of background.
+  
+    -r  Don't reverse the bit order of the bytes in the file.
+    -m  Set mask file.  The mask file is ANDed with the background and the 
+        image.
+  
+  OPTIONS FOR MAC FILES ONLY
+    -p  Use Mac palette rather than OS/2 palette.
+    -I  Don't include ICN# resources (32x32x1 images)
+    -#  Don't include ics# resources (16x16x1 images)
+    -l  Don't include icl4 resources (32x32x4 images)
+    -s  Don't include ics4 resources (16x16x4 images)
+
+COPYRIGHT
+
+  XIcon is Copyright (C) 1993, 94 by Norman Walsh
+
+  XIcon is distributed under the GNU Copyleft.  You are free to modify this
+  code, but you cant take credit for the parts I wrote.  See the file
+  "COPYING" for more information.  
+
+NO WARRANTY
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY 
+  APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT 
+  HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY 
+  OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, 
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+  PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM 
+  IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF 
+  ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+  
+COMMENTS?
+  
+  Whatever you think of this program, drop me a note and tell me.  Some
+  future version of this program will no doubt be a PM application with
+  all kinds of bells and whistles.  But this one ain't it.
+
